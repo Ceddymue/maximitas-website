@@ -5,242 +5,226 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAXIMITAS – Coaching & Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --red: #ba0438;
-      --red-dark: #8f0329;
-      --dark: #1a1a2e;
-      --dark2: #2c2c3e;
-      --text: #333344;
-      --muted: #666680;
-      --bg: #f7f7fa;
+      --red: #9b0031;
+      --dark: #111111;
+      --text: #2a2a2a;
+      --muted: #6a6a6a;
+      --border: #e2e2e0;
+      --bg: #f8f7f5;
       --white: #ffffff;
-      --light: #f0f0f5;
     }
-    body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
-    h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+    body { font-family: 'Jost', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
 
     /* NAV */
-    nav { background: var(--white); border-bottom: 3px solid var(--red); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
-    .nav-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--dark); text-decoration: none; padding: 1.1rem 0; letter-spacing: 2px; }
-    .nav-brand span { color: var(--red); }
-    .nav-tagline { font-size: 0.68rem; font-weight: 300; color: var(--muted); letter-spacing: 1px; display: block; margin-top: -2px; text-transform: uppercase; }
+    nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { height: 52px; display: block; }
     .nav-links { display: flex; }
-    .nav-links a { color: var(--text); text-decoration: none; padding: 1.4rem 1rem; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px; transition: color 0.2s; font-family: 'Montserrat', sans-serif; }
-    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .nav-links a { color: var(--muted); text-decoration: none; padding: 1.5rem 1rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--dark); }
 
     /* HERO */
-    .hero { background: var(--dark); color: var(--white); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(186,4,56,0.15) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(186,4,56,0.08) 0%, transparent 60%); }
-    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
-    .hero-inner { max-width: 900px; margin: 0 auto; padding: 6rem 2rem; position: relative; }
-    .hero-label { display: inline-block; border: 1px solid var(--red); color: var(--red); font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 0.4rem 1rem; margin-bottom: 2rem; font-family: 'Montserrat', sans-serif; }
-    .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; }
-    .hero h1 em { color: var(--red); font-style: normal; }
-    .hero p { font-size: 1.2rem; opacity: 0.75; max-width: 640px; margin-bottom: 3rem; font-weight: 300; line-height: 1.8; }
+    .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; overflow: hidden; }
+    .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.1) 100%); }
+    .hero-inner { position: relative; padding: 0 3rem; max-width: 760px; }
+    .hero-label { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); color: var(--white); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 300; }
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.8); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 0.9rem 2.2rem; border-radius: 3px; text-decoration: none; font-weight: 700; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; transition: all 0.2s; }
-    .btn-red { background: var(--red); color: var(--white); }
-    .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(186,4,56,0.4); }
-    .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: var(--white); }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.07); }
-    .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.35); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-    .hero-scroll::after { content: ''; width: 1px; height: 40px; background: rgba(255,255,255,0.2); }
+    .btn { display: inline-block; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.25s; }
+    .btn-light { background: var(--white); color: var(--dark); }
+    .btn-light:hover { background: var(--bg); }
+    .btn-outline-light { border: 1px solid rgba(255,255,255,0.5); color: var(--white); }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.8); }
 
     /* SECTIONS */
-    .section { padding: 5.5rem 2rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem; font-family: 'Montserrat', sans-serif; }
-    .section-title { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--dark); margin-bottom: 1rem; font-weight: 800; }
-    .section-subtitle { font-size: 1.05rem; color: var(--muted); max-width: 600px; line-height: 1.8; }
-    .bg-dark-section { background: var(--dark); color: var(--white); }
-    .bg-light-section { background: var(--bg); }
+    .section { padding: 6rem 3rem; }
+    .section-inner { max-width: 1140px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; }
+    .section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--dark); margin-bottom: 1.2rem; }
+    .section-lead { font-size: 1.1rem; color: var(--muted); max-width: 580px; line-height: 1.8; font-weight: 300; }
+    .bg-warm { background: var(--bg); }
 
-    /* SERVICES GRID */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; margin-top: 3.5rem; }
-    .service-card { background: var(--bg); padding: 2.5rem 2rem; transition: background 0.25s; position: relative; overflow: hidden; }
-    .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--red); transform: scaleY(0); transform-origin: bottom; transition: transform 0.3s; }
-    .service-card:hover { background: var(--white); }
-    .service-card:hover::before { transform: scaleY(1); }
-    .service-num { font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(186,4,56,0.1); margin-bottom: 0.5rem; line-height: 1; }
-    .service-card h3 { font-size: 1.15rem; color: var(--dark); margin-bottom: 0.75rem; font-weight: 700; }
-    .service-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
-    .service-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.2rem; font-size: 0.85rem; font-weight: 700; color: var(--red); text-decoration: none; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; }
-    .service-link:hover { gap: 0.7rem; }
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 4rem; border: 1px solid var(--border); }
+    .service-card { padding: 2.5rem 2rem; border-right: 1px solid var(--border); position: relative; transition: background 0.25s; }
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: var(--bg); }
+    .service-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--border); line-height: 1; margin-bottom: 1.2rem; font-weight: 300; }
+    .service-card h3 { font-size: 1.3rem; color: var(--dark); margin-bottom: 0.8rem; }
+    .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
+    .service-link { display: inline-block; margin-top: 1.5rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 1px; transition: opacity 0.2s; }
+    .service-link:hover { opacity: 0.7; }
 
-    /* VALUES */
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .value-item { text-align: center; padding: 2rem 1rem; }
-    .value-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(186,4,56,0.1); border: 2px solid rgba(186,4,56,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 1.2rem; }
-    .value-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
-    .value-item p { font-size: 0.88rem; color: rgba(255,255,255,0.5); }
+    /* SPLIT SECTION */
+    .split { display: grid; grid-template-columns: 1fr 1fr; }
+    .split-img { position: relative; min-height: 500px; overflow: hidden; }
+    .split-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .split-content { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .split-content p { color: var(--muted); font-size: 1rem; line-height: 1.9; font-weight: 300; margin-bottom: 1rem; }
 
     /* QUOTE */
-    .quote-section { background: var(--red); color: var(--white); padding: 4rem 2rem; text-align: center; }
-    .quote-text { font-family: 'Montserrat', sans-serif; font-size: clamp(1.2rem, 3vw, 1.9rem); font-weight: 300; font-style: italic; max-width: 700px; margin: 0 auto; line-height: 1.6; }
-    .quote-text strong { font-weight: 700; }
+    .quote-section { padding: 5rem 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); text-align: center; }
+    .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--border); line-height: 0.5; display: block; margin-bottom: 1.5rem; }
+    .quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--dark); max-width: 700px; margin: 0 auto 1.5rem; font-style: italic; font-weight: 300; line-height: 1.5; }
+    .quote-attr { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 
-    /* TEAM PREVIEW */
-    .team-strip { display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
-    .team-card { display: flex; align-items: center; gap: 1.2rem; background: var(--white); border: 1px solid #e8e8f0; border-radius: 6px; padding: 1.5rem; flex: 1; min-width: 240px; }
-    .team-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--dark), var(--dark2)); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
-    .team-card h3 { font-size: 1rem; color: var(--dark); font-weight: 700; }
-    .team-card p { font-size: 0.85rem; color: var(--red); font-weight: 600; font-family: 'Montserrat', sans-serif; }
+    /* VALUES */
+    .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; margin-top: 4rem; }
+    .value-item h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 0.6rem; border-bottom: 2px solid var(--red); padding-bottom: 0.8rem; margin-bottom: 1rem; }
+    .value-item p { font-size: 0.9rem; color: var(--muted); font-weight: 300; line-height: 1.8; }
 
-    /* CTA */
-    .cta-section { background: var(--dark); color: var(--white); text-align: center; padding: 5.5rem 2rem; }
-    .cta-section h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin-bottom: 1rem; font-weight: 800; }
-    .cta-section p { opacity: 0.65; font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; }
+    /* CTA STRIP */
+    .cta-strip { background: var(--dark); color: var(--white); padding: 4rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .cta-strip h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; }
+    .btn-red { background: var(--red); color: var(--white); }
+    .btn-red:hover { opacity: 0.88; }
 
     /* FOOTER */
-    footer { background: #0d0d1a; color: rgba(255,255,255,0.55); padding: 3rem 2rem 1.5rem; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
-    .footer-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--white); letter-spacing: 2px; margin-bottom: 0.75rem; }
-    .footer-brand span { color: var(--red); }
-    footer h4 { color: rgba(255,255,255,0.85); font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.2rem; }
-    footer p, footer a { font-size: 0.9rem; line-height: 2; color: rgba(255,255,255,0.5); text-decoration: none; display: block; transition: color 0.2s; }
-    footer a:hover { color: var(--red); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; text-align: center; font-size: 0.8rem; max-width: 1100px; margin: 0 auto; }
+    footer { background: #0e0e0e; color: rgba(255,255,255,0.45); padding: 4rem 3rem 2rem; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-logo { height: 44px; margin-bottom: 1.2rem; filter: brightness(0) invert(1) opacity(0.7); }
+    footer p, footer a { font-size: 0.85rem; line-height: 2.2; color: rgba(255,255,255,0.42); text-decoration: none; display: block; transition: color 0.2s; }
+    footer a:hover { color: rgba(255,255,255,0.85); }
+    footer h4 { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1.2rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1140px; margin: 0 auto; font-size: 0.78rem; }
 
-    @media (max-width: 768px) {
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .nav-links a { padding: 1.4rem 0.6rem; font-size: 0.8rem; }
+    @media (max-width: 900px) {
+      .services-grid, .values-grid { grid-template-columns: 1fr 1fr; }
+      .service-card { border-bottom: 1px solid var(--border); }
+      .split { grid-template-columns: 1fr; }
+      .split-img { min-height: 300px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 1.5rem; }
+      .section { padding: 4rem 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .services-grid, .values-grid, .footer-inner { grid-template-columns: 1fr; }
+      .nav-links a { padding: 1.5rem 0.6rem; font-size: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-brand">MAXIMI<span>TAS</span><span class="nav-tagline">Coaching & Consulting</span></a>
+  <a href="index.html"><img src="logo.jpg" alt="MAXIMITAS Coaching & Consulting" class="nav-logo"></a>
   <div class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">Über uns</a>
     <a href="services.html">Leistungen</a>
     <a href="contact.html">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-grid"></div>
+  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=85&auto=format&fit=crop" alt="Team bei der Arbeit" class="hero-img">
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-label">Coaching & Consulting</div>
-    <h1>The people business –<br><em>es geht um Menschen!</em></h1>
-    <p>MAXIMITAS hilft Personen und Unternehmen, wahre Größe zu entdecken und zu entwickeln. Unser Ansatz ist ganzheitlich, positiv, prinzipienorientiert und nachhaltig.</p>
+    <p class="hero-label">Coaching & Consulting</p>
+    <h1>The people business –<br><em>es geht um Menschen.</em></h1>
+    <p>MAXIMITAS hilft Personen und Unternehmen, wahre Größe zu entdecken und zu entwickeln. Ganzheitlich, prinzipienorientiert, nachhaltig.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-red">Jetzt Kontakt aufnehmen</a>
-      <a href="services.html" class="btn btn-outline">Unsere Leistungen</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Entdecken</div>
-</section>
-
-<section class="section bg-light-section">
-  <div class="section-inner">
-    <p class="section-label">Was wir für Sie tun können</p>
-    <h2 class="section-title">Unsere Leistungen</h2>
-    <p class="section-subtitle">Von Executive Search bis Stressprävention – wir begleiten Menschen und Organisationen auf dem Weg zu nachhaltiger Größe.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-num">01</div>
-        <h3>Recruiting</h3>
-        <p>Direktsuche (Executive/Professional Search) für Fach- und Führungskräfte. Beratung in HR und Business beim Einsatz von Mitarbeitern und der Zusammenstellung von Personalstrukturen.</p>
-        <a href="services.html" class="service-link">Mehr erfahren →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
-        <h3>Consulting</h3>
-        <p>In Seminaren und Coachings arbeiten wir mit Führungskräften und Mitarbeitern, um diese durch authentisches, werteorientiertes Handeln zu mehr Erfolg und Lebensqualität zu führen.</p>
-        <a href="services.html" class="service-link">Mehr erfahren →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">03</div>
-        <h3>Persönlichkeitstraining</h3>
-        <p>Firmeninterne Seminare auf Basis der Biostrukturanalyse und dem Structogram-Trainingssystem – individuell abgestimmte Trainings zur Förderung der Sozialkompetenz.</p>
-        <a href="services.html" class="service-link">Mehr erfahren →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-num">04</div>
-        <h3>Stressprävention</h3>
-        <p>Das von der Bundespräventionsstelle zertifizierte Konzept „Wege aus der Stressfalle" – entwickelt von Michael Hilgert in Zusammenarbeit mit Ärzten und Psychologen.</p>
-        <a href="services.html" class="service-link">Mehr erfahren →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quote-section">
-  <p class="quote-text">„Die Grenzen unserer Sprache bedeuten die Grenzen unserer Welt." –<strong> Ludwig Wittgenstein</strong></p>
-</section>
-
-<section class="section bg-dark-section">
-  <div class="section-inner">
-    <p class="section-label" style="color:rgba(186,4,56,0.9)">Anspruch & Skills</p>
-    <h2 class="section-title" style="color:white">Mit unserem Namen stehen wir für:</h2>
-    <div class="values-grid">
-      <div class="value-item">
-        <div class="value-icon">🎯</div>
-        <h3>Ergebnisorientiert</h3>
-        <p>Klare Ziele, messbare Ergebnisse – wir liefern.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-icon">🤝</div>
-        <h3>Wertebasiertes Handeln</h3>
-        <p>Ehrenhaftes, prinzipienorientiertes Vorgehen in allem, was wir tun.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-icon">🌐</div>
-        <h3>Partnerschaftliche Zusammenarbeit</h3>
-        <p>Auf Augenhöhe, respektvoll und langfristig ausgerichtet.</p>
-      </div>
-      <div class="value-item">
-        <div class="value-icon">🛡️</div>
-        <h3>Vertrauen durch Integrität</h3>
-        <p>Was wir sagen, das halten wir – immer und konsequent.</p>
-      </div>
+      <a href="contact.html" class="btn btn-light">Kontakt aufnehmen</a>
+      <a href="services.html" class="btn btn-outline-light">Unsere Leistungen</a>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
-    <p class="section-label">Unser Team</p>
-    <h2 class="section-title">Bei uns hat Kompetenz ein Gesicht</h2>
-    <p class="section-subtitle">Erfahrene Persönlichkeiten mit Leidenschaft für Menschen und Organisationen.</p>
-    <div class="team-strip">
-      <div class="team-card">
-        <div class="team-avatar">👨‍💼</div>
-        <div>
-          <h3>Dipl.-Ing. Rainer Müller</h3>
-          <p>Founder</p>
-        </div>
+    <p class="section-label">Was wir tun</p>
+    <h2 class="section-title">Unsere Leistungen</h2>
+    <p class="section-lead">Von Executive Search bis Stressprävention – wir begleiten Menschen und Organisationen auf dem Weg zu nachhaltiger Größe.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Recruiting</h3>
+        <p>Direktsuche für Fach- und Führungskräfte sowie strategische HR-Beratung zur Zusammenstellung optimaler Personalstrukturen.</p>
+        <a href="services.html" class="service-link">Mehr erfahren</a>
       </div>
-      <div class="team-card">
-        <div class="team-avatar">👩‍💼</div>
-        <div>
-          <h3>Vanessa Müller</h3>
-          <p>Head of Research and Administration</p>
-        </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Consulting</h3>
+        <p>Seminare und Coachings für Führungskräfte und Mitarbeiter – authentisch, werteorientiert, nachhaltig wirksam.</p>
+        <a href="services.html" class="service-link">Mehr erfahren</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Persönlichkeitstraining</h3>
+        <p>Firmeninterne Seminare auf Basis der Biostrukturanalyse und des Structogram-Trainingssystems.</p>
+        <a href="services.html" class="service-link">Mehr erfahren</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Stressprävention</h3>
+        <p>Das zertifizierte Konzept „Wege aus der Stressfalle" – entwickelt in Zusammenarbeit mit Ärzten und Psychologen.</p>
+        <a href="services.html" class="service-link">Mehr erfahren</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<div class="split">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=85&auto=format&fit=crop&crop=faces" alt="Professionelle Beratung">
+  </div>
+  <div class="split-content bg-warm">
+    <p class="section-label">Unser Ansatz</p>
+    <h2 class="section-title">Ganzheitlich.<br>Prinzipienorientiert.<br>Nachhaltig.</h2>
+    <p>Jeder Mensch trägt in sich das Potenzial zu wahrer Größe. Unsere Aufgabe ist es, dieses Potenzial zu erkennen, zu fördern und in konkreten Erfolg zu verwandeln.</p>
+    <p>Wir arbeiten nicht mit Schablonen, sondern mit Menschen. Deshalb ist jede unserer Leistungen individuell auf die Bedürfnisse unserer Klienten abgestimmt.</p>
+    <a href="about.html" class="btn btn-red" style="margin-top:1.5rem;display:inline-block">Mehr über uns</a>
+  </div>
+</div>
+
+<div class="quote-section">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">Die Grenzen unserer Sprache bedeuten die Grenzen unserer Welt.</p>
+  <p class="quote-attr">Ludwig Wittgenstein</p>
+</div>
+
+<section class="section bg-warm">
   <div class="section-inner">
-    <h2>Bereit für den nächsten Schritt?</h2>
-    <p>Nehmen Sie unverbindlich Kontakt auf – wir freuen uns auf das Gespräch.</p>
-    <a href="contact.html" class="btn btn-red">Jetzt Kontakt aufnehmen</a>
+    <p class="section-label">Anspruch & Skills</p>
+    <h2 class="section-title">Mit unserem Namen stehen wir für:</h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <h3>Ergebnisorientiert</h3>
+        <p>Klare Ziele, messbare Ergebnisse – wir fokussieren uns auf das, was wirklich zählt.</p>
+      </div>
+      <div class="value-item">
+        <h3>Wertebasiertes Handeln</h3>
+        <p>Ehrenhaftes, prinzipienorientiertes Vorgehen in allem, was wir tun – ohne Kompromisse.</p>
+      </div>
+      <div class="value-item">
+        <h3>Partnerschaftliche Zusammenarbeit</h3>
+        <p>Auf Augenhöhe, respektvoll und langfristig ausgerichtet – Ihre Ziele sind unsere Ziele.</p>
+      </div>
+      <div class="value-item">
+        <h3>Vertrauen durch Integrität</h3>
+        <p>Was wir versprechen, halten wir – konsequent und ohne Ausnahme.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<div class="cta-strip">
+  <h2>Bereit für den nächsten Schritt?</h2>
+  <a href="contact.html" class="btn btn-red">Jetzt Kontakt aufnehmen</a>
+</div>
 
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">MAXIMI<span>TAS</span></div>
+      <img src="logo.jpg" alt="MAXIMITAS" class="footer-logo">
       <p>Coaching & Consulting – wahre Größe entdecken und entwickeln.</p>
-      <p style="margin-top:1rem">info@maximitas.de<br>+49 (0) 4121 78 76 86</p>
     </div>
     <div>
       <h4>Navigation</h4>
@@ -248,6 +232,7 @@
       <a href="about.html">Über uns</a>
       <a href="services.html">Leistungen</a>
       <a href="contact.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
     </div>
     <div>
       <h4>Leistungen</h4>
@@ -256,8 +241,17 @@
       <a href="services.html">Persönlichkeitstraining</a>
       <a href="services.html">Stressprävention</a>
     </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Eichenweg 16<br>D-25365 Klein Offenseth</p>
+      <a href="tel:+494121787686">+49 (0) 4121 78 76 86</a>
+      <a href="mailto:info@maximitas.de">info@maximitas.de</a>
+    </div>
   </div>
-  <div class="footer-bottom">© 2025 MAXIMITAS Coaching & Consulting · Eichenweg 16 · 25365 Klein Offenseth</div>
+  <div class="footer-bottom">
+    <span>© 2025 MAXIMITAS Coaching & Consulting · Dipl.-Ing. Rainer Müller</span>
+    <a href="impressum.html">Impressum</a>
+  </div>
 </footer>
 
 </body>
